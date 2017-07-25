@@ -21,7 +21,7 @@ var P = {
 }
 
 // no permissions initially
-var perm = new Permissions(P.PERM_NONE);
+var perm = new PermissionsManager(P.PERM_NONE);
 
 if(perm.hasPermission(P.PERM_IMPORTANT)){
   // will not happen

@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import Permissions from './Permissions.class'
+import Permissions from './PermissionsManager.class'
 
 
 const P = {
