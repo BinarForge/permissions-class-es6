@@ -24,4 +24,8 @@ export default class Manager
     hasPermission(permission){
         return this.bitCheck(permission, this.userPermissions);
     };
+
+    getPermissionsSumValue(){
+        return this.userPermissions;
+    }
 }

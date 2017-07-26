@@ -118,4 +118,12 @@ describe("Given that the user has got few permissions granted following `flaggin
             expect(permissionCheck).to.be.true;
         })
     })
+
+    describe("When requesting the final permission value", function(){
+        let permissionValue = perm.getPermissionsSumValue();
+
+        it("Then the correct value as a sum of flags is returned", function(){
+            expect(permissionValue).to.be.equal(P.PERM_BASIC + P.PERM_DEV + P.PERM_IMPORTANT);
+        });
+    })
 })
