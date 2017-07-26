@@ -3,7 +3,7 @@ This is small helper class to help managing flag-based permissions.
 
 ### No rocket science
 
-Run `npm run release` to `test` & `build` & `uglifly` into permissions.min.js ready-to-go file.
+Run `npm run release` to `test` & `build` & `babelify` & `compress` into permissions-manager.min.js ready-to-go file. How difficiult can it be in current Java Script world?
 
 ### Usage
 
