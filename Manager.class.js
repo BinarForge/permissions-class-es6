@@ -1,4 +1,4 @@
-export default class PermissionsManager
+export default class Manager
 {
     constructor(userPermissions){
         this.userPermissions = userPermissions;

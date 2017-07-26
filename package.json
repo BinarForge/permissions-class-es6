@@ -5,9 +5,10 @@
   "main": "perm.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha ./*.test.js --reporter spec --compilers js:babel-core/register",
-    "build": "./node_modules/.bin/babel PermissionsManager.class.js --out-file permissions-manager.bundle.js",
+    "build": "./node_modules/.bin/rollup --config ./rollup.config.js",
+    "babelify": "./node_modules/.bin/babel permissions-manager.bundle.js --out-file permissions-manager.bundle.js",
     "compress": "./node_modules/.bin/uglifyjs --compress --mangle --output permissions-manager.min.js -- permissions-manager.bundle.js",
-    "release": "npm run test && npm run build && npm run compress"
+    "release": "npm run test && npm run build && npm run babelify && npm run compress"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
     "babel-preset-es2015": "^6.24.1",
     "chai": "^4.0.2",
     "mocha": "^3.4.2",
+    "rollup": "^0.45.2",
     "uglify-js": "^3.0.26"
   }
 }

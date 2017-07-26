@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import Permissions from './PermissionsManager.class'
+import Manager from './Manager.class'
 
 
 const P = {
@@ -14,7 +14,7 @@ const P = {
 }
 
 describe("Given that the user has no permissions whatsoever", function(){
-    let perm = new Permissions(P.PERM_BASIC);
+    let perm = new Manager(P.PERM_BASIC);
 
     describe("When checking any permission", function(){
         let permissionCheck = perm.hasPermission(1024);
@@ -26,7 +26,7 @@ describe("Given that the user has no permissions whatsoever", function(){
 })
 
 describe("Given that the user has got one specific permission granted", function(){
-    let perm = new Permissions(P.PERM_IMPORTANT);
+    let perm = new Manager(P.PERM_IMPORTANT);
 
     describe("When checking this specific permission", function(){
         let permissionCheck = perm.hasPermission(P.PERM_IMPORTANT);
@@ -46,7 +46,7 @@ describe("Given that the user has got one specific permission granted", function
 })
 
 describe("Given that the user has got few permissions granted", function(){
-    let perm = new Permissions(P.PERM_BASIC);
+    let perm = new Manager(P.PERM_BASIC);
     perm.setPermission(P.PERM_BOLLOCKS, true);
     perm.setPermission(P.PERM_ADMIN, true);
 
@@ -73,7 +73,7 @@ describe("Given that the user has got few permissions granted", function(){
 })
 
 describe("Given that the user has got few permissions granted at first", function(){
-    let perm = new Permissions(P.PERM_BASIC);
+    let perm = new Manager(P.PERM_BASIC);
     perm.setPermission(P.PERM_BOLLOCKS, true);
     perm.setPermission(P.PERM_IMPORTANT, true);
     perm.setPermission(P.PERM_ADMIN, true);
@@ -101,7 +101,7 @@ describe("Given that the user has got few permissions granted at first", functio
 })
 
 describe("Given that the user has got few permissions granted following `flagging` style", function(){
-    let perm = new Permissions(P.PERM_BASIC | P.PERM_DEV | P.PERM_IMPORTANT);
+    let perm = new Manager(P.PERM_BASIC | P.PERM_DEV | P.PERM_IMPORTANT);
 
     describe("When performing the permission check against not granted ones", function(){
         let permissionCheck = perm.hasPermission(P.PERM_BOLLOCKS);
