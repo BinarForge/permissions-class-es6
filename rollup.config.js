@@ -1,5 +1,5 @@
 export default {
-  entry: 'Manager.class.js',
+  entry: 'PermissionsManager.class.js',
   dest: 'permissions-manager.bundle.js',
   format: 'iife',
   moduleName: 'PermissionsManager'

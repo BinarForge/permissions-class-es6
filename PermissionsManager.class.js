@@ -1,4 +1,4 @@
-export default class Manager
+export default class PermissionsManager
 {
     constructor(userPermissions){
         this.userPermissions = userPermissions;
@@ -11,18 +11,18 @@ export default class Manager
     setPermission(permission, give){
         if(give === true){
             if(!this.bitCheck(this.userPermissions, permission)){
-                this.userPermissions += permission;
+                this.userPermissions += permission|0;
             }
         }
         else{
             if(this.bitCheck(this.userPermissions, permission)){
-                this.userPermissions -= permission;
+                this.userPermissions -= permission|0;
             }
         }
     }
 
     hasPermission(permission){
-        return this.bitCheck(permission, this.userPermissions);
+        return this.bitCheck(permission|0, this.userPermissions);
     };
 
     getPermissionsSumValue(){
